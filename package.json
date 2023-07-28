@@ -1,0 +1,19 @@
+{
+  "name": "nodeessentials",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/XP-Magician/nodejs-essentials.git"
+  },
+  "author": "XP-Magician",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XP-Magician/nodejs-essentials/issues"
+  },
+  "homepage": "https://github.com/XP-Magician/nodejs-essentials#readme"
+}
