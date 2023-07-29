@@ -4,15 +4,11 @@
 // Mostrar argumentos de entrada
 console.log(process.argv);
 
-
 // Escuchar eventos del proceso
-process.on('exit',()=>console.log('sali'));
-
+process.on('exit', () => console.log('sali'));
 
 // current working directory
 console.log(process.cwd());
 
-
-//Controlar el proceso y su salida
+// Controlar el proceso y su salida
 process.exit(0);
-
