@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/XP-Magician/nodejs-essentials/issues"
   },
-  "homepage": "https://github.com/XP-Magician/nodejs-essentials#readme"
+  "homepage": "https://github.com/XP-Magician/nodejs-essentials#readme",
+  "dependencies": {
+    "picocolors": "^1.0.0"
+  }
 }
