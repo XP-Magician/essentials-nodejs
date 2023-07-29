@@ -1,5 +1,6 @@
 const path = require('node:path');
 const fs = require('node:fs/promises');
+const colors = require('picocolors');
 
 // Si recibe parametros los toma y sino por defecto usa el directorio raiz actual
 const folder = process.argv[2]??'.';
@@ -10,7 +11,7 @@ const getFiles = async (target_path)=>{
     try{
         files =await fs.readdir(target_path);
     }catch(err){
-        console.log(`Error al analizar el directorio ${folder}`);
+        colors.red(`Error al analizar el directorio ${folder}`);
         process.exit(1);
     }
     return files;
@@ -44,14 +45,14 @@ const allPromises= files.map(async file=>{
          de element iterado por si misma */
             stats = await fs.stat(file_path);
         }catch{
-            console.log('Error listando los archivos del directorio');
+            colors.red('Error listando los archivos del directorio');
             process.exit(1);
         }
      
-        const isFile = stats.isFile()?'File':'Directory';
-        const fileSize = stats.size.toString();
+        const isFile = stats.isFile()?'F':'D';
+        const fileSize = stats.size.toString().padStart(20);
         const fileModified = stats.mtime.toLocaleDateString();
-        return `--${isFile} ${file.padEnd(20)} ${fileSize.padStart(40)} ${fileModified}`
+        return `--${colors.bold(isFile)} ${colors.green(file.padEnd(20))} ${colors.cyan(fileSize)} ${colors.yellow(fileModified)}`
         
     });
 
